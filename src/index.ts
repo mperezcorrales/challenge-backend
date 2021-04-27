@@ -2,7 +2,7 @@ import * as compression from 'compression';
 import * as express from 'express';
 import * as methodOverride from 'method-override';
 import * as winston from 'winston';
-import * as controller from './controller';
+import appRoutes from './routes';
 import { SERVER_PORT, SERVER_HOST } from './env';
 
 const app = express();
@@ -22,14 +22,14 @@ const logger = winston.createLogger({
     ]
 });
 
-app.use(compression());
+app.use(compression()); // Decreases the downloadable amount of data that’s served to users
 app.use(express.urlencoded({
     extended: true
 }));
 app.use(express.json());
-app.use(methodOverride());
+app.use(methodOverride()); // Lets you use HTTP verbs such as PUT or DELETE in places where the client doesn't support it.
 
-app.use('/api', controller.default);
+app.use('/api', appRoutes);
 
 app.listen(SERVER_PORT, () => {
     logger.log('info', `Server Port: ${SERVER_PORT}`);

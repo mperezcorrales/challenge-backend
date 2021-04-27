@@ -26,6 +26,6 @@ const startApp = (done) => {
     });
 };
 
-gulp.task('clean', cleanProjectDist);
-gulp.task('build', gulp.series(['clean'], buildProject));
-gulp.task('start', gulp.series(['build'], startApp));
+exports.clean = cleanProjectDist;
+exports.build = gulp.series(cleanProjectDist, buildProject);
+exports.start = gulp.series(cleanProjectDist, buildProject, startApp);

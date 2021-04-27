@@ -12,7 +12,8 @@
         "suppressExcessPropertyErrors": true,
         "typeRoots": [
             "node_modules/@types"
-        ]
+        ],
+        "resolveJsonModule": true
     },
     "exclude": [
         "node_modules"
