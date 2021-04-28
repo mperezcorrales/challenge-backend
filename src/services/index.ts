@@ -69,7 +69,7 @@ export const getOrderNearbyTrucksService = async (orderRequestParams) => {
     }
 };
 
-export const updateDefaultTruckDistanceService = async (defaultDistance) => {
+export const updateDefaultTruckDistanceService = async (defaultDistance: number) => {
     try {
         await NearbyTruckDistanceModel.update({
             default_distance: defaultDistance

@@ -27,7 +27,7 @@ export const NearbyTruckDistanceModel = <NearbyTruckDistanceStatic>sequelize.def
   },
   default_distance: {
     type: DataTypes.NUMBER,
-    allowNull: false
+    allowNull: false,
   },
 }, {
   // Other model options go here

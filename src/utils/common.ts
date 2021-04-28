@@ -19,3 +19,7 @@ export const coordinatesDistance = (lat1: number, lon1: number, lat2: number, lo
         return dist;
     }
 };
+
+export const getRandomInt = (max) => {
+    return Math.floor(Math.random() * max);
+};

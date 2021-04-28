@@ -20,7 +20,8 @@
         "start-dev": "env-cmd -f dev.env ts-node src/index.ts",
         "start-prod": "env-cmd -f prod.env ts-node src/index.ts",
         "start-gulp-dev": "env-cmd -f dev.env gulp start",
-        "start-gulp-prod": "env-cmd -f prod.env gulp start"
+        "start-gulp-prod": "env-cmd -f prod.env gulp start",
+        "test": "env-cmd -f dev.env mocha -r ts-node/register tests/*.ts --timeout 10000"
     },
     "dependencies": {
         "@types/compression": "^1.7.0",
@@ -49,7 +50,9 @@
         "gulp-cli": "^2.3.0",
         "gulp-nodemon": "^2.5.0",
         "gulp-typescript": "^5.0.1",
+        "mocha": "^8.3.2",
         "sequelize-cli": "^6.2.0",
+        "supertest": "^6.1.3",
         "ts-node": "^9.1.1",
         "typescript": "^3.9.9"
     }

@@ -3,7 +3,7 @@ import {sequelize} from "./index";
 import {GeoLocation} from "../../interfaces";
 
 export interface TruckAttributes {
-    readonly id: number;
+    readonly id?: number;
     geo_location: GeoLocation;
     license_plate: string;
     allowed_weight: number;
