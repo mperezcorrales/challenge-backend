@@ -11,8 +11,13 @@ const cleanProjectDist = () => {
 };
 
 const buildProject = () => {
-    return gulp.src(['typings/**/*.ts', 'src/**/*.ts'])
+    return gulp.src(['typings/**/*.ts', 'src/**/*.ts', 'src/**/*.json'])
         .pipe(tsProject())
+        .pipe(gulp.dest(`${DIST_FOLDER}`));
+};
+
+const copyJsonFiles = () => {
+    return gulp.src(['src/**/*.json'])
         .pipe(gulp.dest(`${DIST_FOLDER}`));
 };
 
@@ -27,5 +32,5 @@ const startApp = (done) => {
 };
 
 exports.clean = cleanProjectDist;
-exports.build = gulp.series(cleanProjectDist, buildProject);
-exports.start = gulp.series(cleanProjectDist, buildProject, startApp);
+exports.build = gulp.series(cleanProjectDist, buildProject, copyJsonFiles);
+exports.start = gulp.series(cleanProjectDist, buildProject, copyJsonFiles, startApp);
