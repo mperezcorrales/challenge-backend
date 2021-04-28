@@ -3,6 +3,7 @@ typings/
 bin/
 package-lock.json
 *.env
+!sample.env
 logs/*
-src/sqlz/config/*
+src/sqlz/config/config.json
 .idea

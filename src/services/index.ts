@@ -1,4 +1,4 @@
-import {TruckAttributes, TruckModel, TruckStatic} from "../sqlz/models/truck";
+import {TruckModel} from "../sqlz/models/truck";
 import {coordinatesDistance} from "../utils/common";
 import {UserModel} from "../sqlz/models/user";
 import {NearbyTruckDistanceModel} from "../sqlz/models/nearbytruckdistance";
@@ -23,7 +23,6 @@ export const loginRequestService = async (username, password) => {
 
 export const updateTruckInfoService = async (truckInfo) => {
     try {
-        console.log('truckInfo: ', truckInfo);
         await TruckModel.update({
             geo_location: {
                 latitude: truckInfo.latitude,

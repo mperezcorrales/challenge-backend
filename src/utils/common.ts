@@ -20,6 +20,6 @@ export const coordinatesDistance = (lat1: number, lon1: number, lat2: number, lo
     }
 };
 
-export const getRandomInt = (max) => {
+export const getRandomInt = (max: number) : number => {
     return Math.floor(Math.random() * max);
 };

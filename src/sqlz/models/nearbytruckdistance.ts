@@ -1,6 +1,5 @@
 import {BuildOptions, DataTypes, Model} from 'sequelize'
 import {sequelize} from "./index";
-import {GeoLocation} from "../../interfaces";
 
 export interface NearbyTruckDistanceAttributes {
   readonly id: number;

@@ -1,9 +1,8 @@
 import {BuildOptions, DataTypes, Model} from 'sequelize'
 import {sequelize} from "./index";
-import {GeoLocation} from "../../interfaces";
 
 export interface UserAttributes {
-  readonly id: number;
+  readonly id?: number;
   username: string;
   password: string;
   role: string;

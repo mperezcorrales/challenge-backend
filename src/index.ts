@@ -35,5 +35,3 @@ app.listen(SERVER_PORT, () => {
     logger.log('info', `Server Port: ${SERVER_PORT}`);
     logger.log('info', `Server URL: http://${SERVER_HOST}:${SERVER_PORT}`);
 });
-
-export default app;

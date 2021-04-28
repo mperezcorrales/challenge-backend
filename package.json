@@ -16,7 +16,6 @@
         "rollback-dev": "NODE_ENV=development npx sequelize-cli db:migrate:undo",
         "seed-dev": "NODE_ENV=development npx sequelize-cli db:seed:all",
         "undo-seed-dev": "NODE_ENV=development npx sequelize-cli db:seed:undo",
-        "start-db": "env-cmd -f dev.env ts-node src/db-connection.ts",
         "start-dev": "env-cmd -f dev.env ts-node src/index.ts",
         "start-prod": "env-cmd -f prod.env ts-node src/index.ts",
         "start-gulp-dev": "env-cmd -f dev.env gulp start",
