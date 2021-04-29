@@ -2,6 +2,7 @@ import * as compression from 'compression';
 import * as express from 'express';
 import * as methodOverride from 'method-override';
 import * as winston from 'winston';
+import * as cors from 'cors';
 import appRoutes from './routes';
 import { SERVER_PORT, SERVER_HOST } from './env';
 
@@ -26,6 +27,7 @@ app.use(compression()); // Decreases the downloadable amount of data that’s se
 app.use(express.urlencoded({
     extended: true
 }));
+app.use(cors());
 app.use(express.json());
 app.use(methodOverride()); // Lets you use HTTP verbs such as PUT or DELETE in places where the client doesn't support it.
 
